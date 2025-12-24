@@ -32,3 +32,12 @@
   - Memory Optimized
   - GPU Instances
 - Terminated the EC2 instances after practice.
+  
+## 24/12/25 - S3
+**Topics Learned:**
+- Amazon S3 (Simple Storage Service) is an object storage service used to store files like images, datasets, logs, and static website content.
+-Data is stored inside buckets, and each file is an object with a key, data, and metadata.
+- S3 provides different storage classes (Standard, IA, Glacier) to balance cost and access frequency.
+- Access is controlled using IAM policies (identity-based) and Bucket policies (resource-based).
+- Versioning allows retaining previous versions of files and recovering from accidental deletes/overwrites.
+- Block Public Access protects buckets from unintended public exposure (recommended unless hosting a website).
