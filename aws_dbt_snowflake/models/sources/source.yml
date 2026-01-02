@@ -1,0 +1,11 @@
+sources:
+  - name: staging
+    database: DATAENGPROJ  
+    schema: staging 
+    tables:
+      - name: bookings
+      - name: listings
+      - name: hosts
+      
+
+ 
