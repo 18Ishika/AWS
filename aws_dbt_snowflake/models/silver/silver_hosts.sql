@@ -4,6 +4,7 @@
 ) }}
 
 SELECT
+    HOST_ID,
     {{underscore('HOST_NAME')}} AS HOST_NAME,
     HOST_SINCE,
     IS_SUPERHOST,
