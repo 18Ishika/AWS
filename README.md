@@ -160,4 +160,9 @@ This project demonstrates:
 - Reusable dbt transformations  
 - Business-ready analytical datasets  
 
+
+## Lineage of the obt model
+<img width="982" height="497" alt="image" src="https://github.com/user-attachments/assets/dcd3fa8b-b58a-4a4b-88b1-e573c497ce72" />
+
+
 ---
