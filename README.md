@@ -1,7 +1,3 @@
-# AWS
-
-
-```
 # AWS — Airbnb Data Engineering Pipeline (S3 → Snowflake → dbt)
 
 This repository contains an end-to-end modern data engineering pipeline built using:
@@ -11,100 +7,105 @@ This repository contains an end-to-end modern data engineering pipeline built us
 - dbt for data modeling and transformations
 
 The pipeline processes the **Airbnb dataset** consisting of:
+
 - Bookings
 - Listings
 - Hosts
 
-Data is modeled across **Bronze, Silver, and Gold** layers with preprocessing and an **OBT (One Big Table)** to power analytics and star-schema reporting.
+Data is modeled across **Bronze, Silver, and Gold layers** with preprocessing and an **OBT (One Big Table)** to power analytics and star-schema reporting.
 
 ---
 
 ## 🚀 Project Architecture (High-Level)
 
-Raw CSV data → Stored in S3  
+Raw CSV data → Stored in **AWS S3**  
 ⬇  
-Loaded into Snowflake staging tables  
+Loaded into **Snowflake staging tables**  
 ⬇  
-Transformed using dbt into:
+Transformed using **dbt** into:
 
-- Bronze Layer — Raw structured data
-- Silver Layer — Cleaned & preprocessed data
-- Gold Layer — Business-ready OBT + Star Schema
+- **Bronze Layer** — Raw structured data  
+- **Silver Layer** — Cleaned & preprocessed data  
+- **Gold Layer** — Business-ready OBT + Star Schema  
 
 ---
 
 ## 🧱 Data Layers Overview
 
-### 🟤 Bronze Layer (Raw Ingest)
+### 🟤 Bronze Layer — Raw Ingest
 
-Purpose:
-- Store raw ingested data without modification
+**Purpose**
+
+- Store raw ingested data without modification  
 - Maintain original source format
 
-Includes tables:
+**Tables**
 
 - `bronze_bookings`
 - `bronze_listings`
 - `bronze_hosts`
 
-Actions performed:
-- Basic column alignment
-- Initial schema mapping
+**Actions performed**
+
+- Basic column alignment  
+- Initial schema mapping  
 
 No transformations are applied here.
 
 ---
 
-### ⚙️ Silver Layer (Preprocessing & Cleaning)
+### ⚙️ Silver Layer — Preprocessing & Cleaning
 
-Purpose:
-- Data standardization
-- Handling missing / inconsistent values
-- Feature engineering where needed
+**Purpose**
 
-Key preprocessing steps:
+- Data standardization  
+- Handling missing / inconsistent values  
+- Feature engineering where needed  
 
-- Date formatting & normalization
-- Numeric field conversions
-- Outlier handling (where applicable)
-- Categorical standardization
+**Key preprocessing steps**
 
-Example tables:
+- Date formatting & normalization  
+- Numeric field conversions  
+- Outlier handling (where applicable)  
+- Categorical standardization  
+
+**Tables**
 
 - `silver_bookings`
 - `silver_listings`
 - `silver_hosts`
 
-This layer creates **clean, analytics-ready datasets**.
+This layer produces **clean, analytics-ready datasets**.
 
 ---
 
-### 🟡 Gold Layer (Analytics & Business Layer)
+### 🟡 Gold Layer — Analytics & Business Layer
 
-Purpose:
-- Create finalized business-ready tables
-- Join datasets into a unified analytics model
+**Purpose**
 
-Includes:
+- Create finalized business-ready tables  
+- Join datasets into a unified analytics model  
 
-####  OBT — One Big Table
+#### 🧮 OBT — One Big Table
 
-The OBT joins:
+OBT combines:
 
-- Bookings
-- Listings
-- Hosts
+- Bookings  
+- Listings  
+- Hosts  
 
 Used to derive:
 
-- Revenue metrics
-- Accommodation attributes
-- Host performance insights
-- Booking-level analytics
+- Revenue metrics  
+- Accommodation attributes  
+- Host performance insights  
+- Booking-level analytics  
+
+---
 
 #### ⭐ Star Schema (Derived from OBT)
 
-Dimensions / Facts created from OBT:
+**Dimensions & Facts**
 
 - `dim_listings`
 - `dim_hosts`
@@ -113,9 +114,9 @@ Dimensions / Facts created from OBT:
 
 Designed for:
 
-- BI dashboards
-- Aggregation queries
-- Fast analytical workloads
+- BI dashboards  
+- Aggregation queries  
+- Fast analytical workloads  
 
 ---
 
@@ -123,44 +124,40 @@ Designed for:
 
 Tables utilized:
 
-- Bookings
-- Listings
-- Hosts
+- Bookings  
+- Listings  
+- Hosts  
 
-These datasets help analyze:
+Supports analysis of:
 
-- guest behavior
-- property characteristics
-- revenue patterns
-- host performance
+- Guest behavior  
+- Property characteristics  
+- Revenue trends  
+- Host performance  
 
 ---
 
 ## 🛠️ Tools & Technologies
 
-| Component | Technology |
-|---------|----------|
-| Storage | AWS S3 |
-| Warehouse | Snowflake |
-| Transformation | dbt |
-| Data Modeling | Bronze / Silver / Gold |
-| Final Outputs | OBT + Star Schema |
+| Component        | Technology |
+|-----------------|-----------|
+| Storage         | AWS S3 |
+| Data Warehouse  | Snowflake |
+| Transformation  | dbt |
+| Modeling        | Bronze / Silver / Gold |
+| Final Outputs   | OBT + Star Schema |
 
-
+---
 
 ## 🎯 Key Outcomes
 
 This project demonstrates:
 
-- Modern data warehouse design
-- Medallion architecture principles
-- ETL → ELT migration practice
-- Analytics-oriented data modeling
-- Building reusable dbt transformations
-- Creating business-ready datasets
+- Modern data warehouse design  
+- Medallion architecture principles  
+- ETL → ELT migration workflow  
+- Analytics-oriented data modeling  
+- Reusable dbt transformations  
+- Business-ready analytical datasets  
 
 ---
-```
-
-
-Just tell me what you’d like to include next 🙂
